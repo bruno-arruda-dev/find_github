@@ -1,8 +1,8 @@
-import { UserProps } from '../types/user';
-import Search from '../components/Search/Search';
+import { UserProps } from '../../types/user';
+import Search from '../../components/Search/Search';
 import { useState } from 'react';
-import User from '../components/User/User';
-import Error from '../components/Error/Error';
+import User from '../../components/User/User';
+import Error from '../../components/Error/Error';
 
 const Home = () => {
     const [user, setUser] = useState<UserProps | null>(null);
