@@ -35,6 +35,7 @@ const Home = () => {
 
   return (
     <div className='home'>
+            <h1>Buscar GitHub</h1>
       <Search loadUser={loadUser} />
       {user && <User {...user} />}
       {error && <Error />}

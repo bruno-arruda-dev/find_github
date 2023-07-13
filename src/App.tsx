@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div className={classes.app}>
-      <h1>Finder GitHub</h1>
       <Rotas />
     </div>
   )

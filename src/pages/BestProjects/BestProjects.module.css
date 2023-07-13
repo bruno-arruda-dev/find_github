@@ -1,0 +1,21 @@
+.project h2 {
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.projectData {
+    background-color: #0d1117;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.projectData h3 {
+    color: #525a66;
+    font-weight: bold;
+}
