@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.css';
+import { ImGithub  } from "react-icons/im";
 
 type Project = {
   id: number;
@@ -37,8 +38,7 @@ const BestProjects: React.FC = () => {
         <div className={classes.projectData}  key={project.id}>
           <h3>{project.name}</h3>
           <p>{project.description}</p>
-          <a href={project.html_url} target='_blank'>Ver repositório</a>
-          {/* Outras informações do projeto */}
+          <a href={project.html_url} target='_blank'>{<ImGithub />}</a>
         </div>
       ))}
     </div>

@@ -19,3 +19,14 @@
     color: #525a66;
     font-weight: bold;
 }
+
+.projectData a svg {
+    fill: #525a66;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    transition: all .2s ease;
+}
+
+.project a svg:hover {
+    transform: scale(1.1);
+}
