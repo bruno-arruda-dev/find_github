@@ -1,13 +1,15 @@
+@import './components/styles/global.scss';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  color: #fff
+  color: $txt-main-color;
 }
 
 body {
-  background-color: #010409;
+  background-color: $bg-main-color;
   padding: 2rem;
 }
 
