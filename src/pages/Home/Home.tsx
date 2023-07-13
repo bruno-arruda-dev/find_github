@@ -3,6 +3,7 @@ import Search from '../../components/Search/Search';
 import { useState } from 'react';
 import User from '../../components/User/User';
 import Error from '../../components/Error/Error';
+import Loader from '../../components/Loader/Loader';
 
 const Home = () => {
     const [user, setUser] = useState<UserProps | null>(null);
