@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import classes from './BestProjects.module.css';
+import classes from './BestProjects.module.scss';
 import { ImGithub  } from "react-icons/im";
 
 type Project = {
