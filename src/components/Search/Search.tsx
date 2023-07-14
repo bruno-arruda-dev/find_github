@@ -1,5 +1,4 @@
 import { useState, KeyboardEvent } from 'react';
-
 import { BsSearch } from 'react-icons/bs';
 import classes from './Search.module.scss';
 

@@ -8,8 +8,10 @@ import Loader from '../../components/Loader/Loader';
 const Home = () => {
     const [user, setUser] = useState<UserProps | null>(null);
     const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const loadUser = async(userName: string) => {
+      setIsLoading(true);
       setError(false);
       setUser(null);
         const res = await fetch(`https://api.github.com/users/${userName}`)
@@ -32,12 +34,14 @@ const Home = () => {
         };
 
         setUser(userData);
+        setIsLoading(false);
     }
 
   return (
     <div className='home'>
             <h1>Buscar GitHub</h1>
       <Search loadUser={loadUser} />
+      {isLoading && <Loader />}
       {user && <User {...user} />}
       {error && <Error />}
     </div>

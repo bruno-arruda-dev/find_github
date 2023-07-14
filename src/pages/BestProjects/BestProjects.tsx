@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.scss';
 import { ImGithub  } from "react-icons/im";
+import Loader from '../../components/Loader/Loader';
 
 type Project = {
   id: number;
@@ -13,9 +14,11 @@ type Project = {
 const BestProjects: React.FC = () => {
   const { login } = useParams<{ login: string | undefined }>();
   const [bestProjects, setBestProjects] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchBestProjects = async () => {
+      setIsLoading(true);
       try {
         if (login) {
           const response = await fetch(`https://api.github.com/users/${login}/repos`);
@@ -26,6 +29,7 @@ const BestProjects: React.FC = () => {
       } catch (error) {
         console.log(error);
       }
+      setIsLoading(false);
     };
 
     void fetchBestProjects();
@@ -33,7 +37,8 @@ const BestProjects: React.FC = () => {
 
   return (
     <div className={classes.project}>
-      <h2>Projetos de {login}</h2>
+      <h2>{bestProjects.length} projetos de {login}</h2>
+      {isLoading && <Loader />}
       {bestProjects.map((project) => (
         <div className={classes.projectData}  key={project.id}>
           <h3>{project.name}</h3>
