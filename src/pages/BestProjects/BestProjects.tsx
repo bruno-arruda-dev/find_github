@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.scss';
 import { ImGithub  } from "react-icons/im";
+import { FaReadme } from 'react-icons/fa';
 import Loader from '../../components/Loader/Loader';
 
 type Project = {
@@ -43,7 +44,10 @@ const BestProjects: React.FC = () => {
         <div className={classes.projectData}  key={project.id}>
           <h3>{project.name}</h3>
           <p>{project.description}</p>
-          <a href={project.html_url} target='_blank'>{<ImGithub />}</a>
+          <div className='links'>
+            <a href={project.html_url} target='_blank'>{<ImGithub />}</a>
+            <a href={`${project.html_url}/blob/main/README.md`} target='_blank'>{<FaReadme />}</a>
+          </div>
         </div>
       ))}
     </div>

@@ -22,16 +22,22 @@
             font-weight: bold;
         }
 
-        a svg {
-            fill: $txt-secnd-color;
-            border-radius: 50%;
-            font-size: 2.5rem;
-            transition: all .2s ease;
-        }
+        div {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
 
-        a svg:hover {
-            transform: scale(1.1);
+            a svg {
+                fill: $txt-secnd-color;
+                border-radius: 50%;
+                font-size: 2.5rem;
+                transition: all .2s ease;
+            }
+    
+            a svg:hover {
+                transform: scale(1.1);
+            }
         }
     }
-
 }
