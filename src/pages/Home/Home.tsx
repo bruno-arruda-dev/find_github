@@ -20,6 +20,7 @@ const Home = () => {
 
         if (res.status === 404) {
           setError(true);
+          setIsLoading(false);
           return;
         }
 
