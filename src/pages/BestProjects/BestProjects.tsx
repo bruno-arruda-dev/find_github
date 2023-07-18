@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.scss';
-import { ImGithub  } from "react-icons/im";
+import { ImGithub } from 'react-icons/im';
 import { FaReadme } from 'react-icons/fa';
 import Loader from '../../components/Loader/Loader';
 
@@ -10,6 +10,7 @@ type Project = {
   name: string;
   description: string;
   html_url: string;
+  created_at: string; // Add the created_at property
 };
 
 const BestProjects: React.FC = () => {
@@ -24,7 +25,9 @@ const BestProjects: React.FC = () => {
         if (login) {
           const response = await fetch(`https://api.github.com/users/${login}/repos`);
           const data: Project[] = await response.json();
-          console.log(data);
+          
+          data.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()); // Ordena por data de criação
+
           setBestProjects(data);
         }
       } catch (error) {
@@ -41,12 +44,16 @@ const BestProjects: React.FC = () => {
       <h2>{bestProjects.length} projetos de {login}</h2>
       {isLoading && <Loader />}
       {bestProjects.map((project) => (
-        <div className={classes.projectData}  key={project.id}>
+        <div className={classes.projectData} key={project.id}>
           <h3>{project.name}</h3>
           <p>{project.description}</p>
           <div className='links'>
-            <a href={project.html_url} target='_blank'>{<ImGithub />}</a>
-            <a href={`${project.html_url}/blob/main/README.md`} target='_blank'>{<FaReadme />}</a>
+            <a href={project.html_url} target='_blank'>
+              {<ImGithub />}
+            </a>
+            <a href={`${project.html_url}/blob/main/README.md`} target='_blank'>
+              {<FaReadme />}
+            </a>
           </div>
         </div>
       ))}
