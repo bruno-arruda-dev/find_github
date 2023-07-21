@@ -5,7 +5,7 @@ import BestProjects from '../../pages/BestProjects/BestProjects';
 const Rotas = () => (
     <Routes>
         <Route path='/' element={ <Home /> } />
-        <Route path='/repos/:login' element={ <BestProjects /> } />
+        <Route path='/:login' element={ <BestProjects /> } />
     </Routes>
 )
 
