@@ -10,3 +10,13 @@ $txt-secnd-color: #525a66;
 //Icons
 $icon-main-color: #1176c9;
 $icon-secnd-color: #4ed8c7;
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

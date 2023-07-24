@@ -16,6 +16,19 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
+        position: relative;
+
+        .favorite {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            fill: $txt-secnd-color;
+    
+            &:hover {
+                cursor: pointer;
+                animation: spin .5s ease-in-out;
+            }
+        }
 
         h3 {
             color: $txt-secnd-color;

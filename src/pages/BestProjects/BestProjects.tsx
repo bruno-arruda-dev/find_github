@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.scss';
 import { ImGithub } from 'react-icons/im';
 import { FaReadme } from 'react-icons/fa';
+import {AiFillStar} from 'react-icons/ai';
 import Loader from '../../components/Loader/Loader';
 
 type Project = {
@@ -45,6 +46,7 @@ const BestProjects: React.FC = () => {
       {isLoading && <Loader />}
       {bestProjects.map((project) => (
         <div className={classes.projectData} key={project.id}>
+          <AiFillStar className={classes.favorite} />
           <h3>{project.name}</h3>
           <p>{project.description}</p>
           <div className='links'>
