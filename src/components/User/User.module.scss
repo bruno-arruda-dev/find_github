@@ -28,11 +28,11 @@
     }
 
     .favorite {
-        fill: $txt-secnd-color;
-    }
-
-    .unfavorite {
         fill: yellow;
+    }
+    
+    .unfavorite {
+        fill: $txt-secnd-color;
     }
 
     img {
