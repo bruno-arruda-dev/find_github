@@ -22,7 +22,6 @@ const BestProjects: React.FC = () => {
   const { login } = useParams<{ login: string }>();
   const [bestProjects, setBestProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [favoriteRepo, setFavoriteRepo] = useState('unfavorite');
   const { checkFavoriteRepo, favorites } = useContext(FavoriteRepoContext);
 
   useEffect(() => {
@@ -45,13 +44,6 @@ const BestProjects: React.FC = () => {
 
     void fetchBestProjects();
   }, [login]);
-
-  // useEffect(() => {
-  //   const isFavorite = favorites.includes(`https://api.github.com/repos/${project.owner.login}/${project.name}`);
-
-  //   setFavoriteRepo(isFavorite ? "favorite" : "unfavorite");
-
-  // }, [favorites]);
 
   const handleFavoriteRepo = (repo: string) => {
     checkFavoriteRepo(repo);
