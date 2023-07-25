@@ -18,16 +18,23 @@
         margin-bottom: 1.5rem;
         position: relative;
 
-        .favorite {
+        .star {
             position: absolute;
             top: 10px;
             right: 10px;
-            fill: $txt-secnd-color;
     
             &:hover {
                 cursor: pointer;
                 animation: spin .5s ease-in-out;
             }
+        }
+    
+        .favorite {
+            fill: yellow;
+        }
+        
+        .unfavorite {
+            fill: $txt-secnd-color;
         }
 
         h3 {
