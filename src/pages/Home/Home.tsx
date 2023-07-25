@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-            <h1>Buscar GitHub</h1>
+            <h1>Finder GitHub</h1>
       <Search loadUser={loadUser} />
       {isLoading && <Loader />}
       {user && <User {...user} />}
