@@ -1,0 +1,12 @@
+@import '../../components/styles/global.scss';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    h1 {
+        margin: 1rem 0;
+    }
+}

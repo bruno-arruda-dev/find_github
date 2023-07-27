@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import classes from "./User.module.scss";
 import { FavoriteUserContext } from "../../context/FavoriteUserContext";
 
-const User = ({login, avatar_url, followers, following, location}: UserProps) => {
+const User = ({ login, avatar_url, followers, following, location, name }: UserProps) => {
     const [favoriteUser, setFavoriteUser] = useState("unfavorite");
-    const { checkFavoriteUser, favorites } = useContext(FavoriteUserContext);
+    const { checkFavoriteUser, favoritesUsers } = useContext(FavoriteUserContext);
 
     const handleFavoriteUser = () => {
         checkFavoriteUser(login);
@@ -16,11 +16,11 @@ const User = ({login, avatar_url, followers, following, location}: UserProps) =>
 
     useEffect(() => {
         // Verifica se o login está no array de favoritos
-        const isFavorite = favorites.includes(login);
+        const isFavorite = favoritesUsers.includes(login);
 
         // Atualiza o estado do favoriteUser de acordo com a verificação
         setFavoriteUser(isFavorite ? "favorite" : "unfavorite");
-    }, [favorites, login]);
+    }, [favoritesUsers, login]);
 
     return (
         <div className={classes.user}>
@@ -31,7 +31,9 @@ const User = ({login, avatar_url, followers, following, location}: UserProps) =>
             <a className={classes.profile} href={`https://github.com/${login}`} target="_blank">
                 <img src={avatar_url} alt={login} />
             </a>
-            <h1>{login}</h1>
+            {
+                name ? <h1>{name}</h1> : <h1>{login}</h1>
+            }
             {location && (
                 <p className={classes.location}>
                     <MdLocationPin />
