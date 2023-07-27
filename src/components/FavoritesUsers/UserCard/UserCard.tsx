@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classes from './UserCard.module.scss';
+import { SearchProps } from '../../../types/loadUser';
 
 interface UserData {
     login: string;
@@ -10,9 +11,10 @@ interface UserData {
 
 interface UserCardProps {
     user: string;
+    loadUser: (userName: string) => Promise<void>;
 }
 
-const UserCard: React.FC<UserCardProps> = ({ user }) => {
+const UserCard: React.FC<UserCardProps> = ({ user, loadUser }) => {
     const [userData, setUserData] = useState<UserData | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -37,16 +39,22 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
         void fetchUserData();
     }, [user]);
 
+    const handleSelectUser = () => {
+        if (userData) {
+            void loadUser(userData.login);
+        }
+    };
+
     return (
         <div className={classes.userCard}>
             {loading ? (<p>Loading...</p>) : error ? (<p>{error}</p>
             ) : (
                 userData && (
-                    <div className={classes.card}>
+                    <div className={classes.card} onClick={handleSelectUser}>
                         <img src={userData.avatar_url} />
                         <div>
                             <p>{userData.login}</p>
-                            <p>{userData.name}</p>
+                            <p>{userData.location}</p>
                         </div>
                     </div>
                 )

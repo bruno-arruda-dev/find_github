@@ -1,26 +1,20 @@
 @import '../../styles/global.scss';
 
 .userCard {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     border-radius: 10px;
-    width: 200px;
-    height: 50px;
     font-size: .8rem;
-    text-align: left;
-    position: relative;
+    background-color: $icon-main-color;
+    padding: 5px;
+    opacity: 0.5;
+    transition: all 0.2s ease-in-out;
     
     .card {
         border-radius: 1rem;
         display: flex;
-        flex-direction: column;
-        background-color: $bg-secnd-color;
-        height: 90%;
-        width: 90%;
-
+        width: 100%;
+        align-items: center;
+        
         img {
-            position: absolute;
             top: 0;
             left: 0;
             display: block;
@@ -28,6 +22,16 @@
             height: 50px;
             border-radius: 50%;
         }
+        
+        div {
+            width: calc(100% - 50px);
+            height: fit-content;
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
     }
 
 

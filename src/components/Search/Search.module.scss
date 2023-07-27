@@ -3,7 +3,7 @@
 .search {
     background-color: $bg-secnd-color;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: $main-radius;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
 
         input, button {
             padding: .6rem;
-            border-radius: 3px;
+            border-radius: $main-radius;
             border: none;
             color: $icon-main-color;
 

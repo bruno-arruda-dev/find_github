@@ -3,7 +3,7 @@
 .user {
     background-color: $bg-secnd-color;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: $main-radius;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,7 +95,7 @@
         padding: 1rem 4rem;
         border-radius: 5px;
         opacity: 0.5;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
 
         &:hover {
             opacity: 1;

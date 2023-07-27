@@ -49,7 +49,7 @@ const Home = () => {
       {isLoading && <Loader />}
       {user && <User {...user} />}
       {error && <Error />}
-      <FavoriteUsers />
+      <FavoriteUsers loadUser={loadUser} />
     </div>
   );
 }
