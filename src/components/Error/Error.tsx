@@ -1,6 +1,10 @@
+import classes from './Error.module.scss';
+import {BsExclamationTriangleFill} from 'react-icons/bs'
+
 const Error = () => {
   return (
-    <div>
+    <div className={classes.error}>
+      <BsExclamationTriangleFill />
       <p>Usuário não encontrado</p>
     </div>
   );
