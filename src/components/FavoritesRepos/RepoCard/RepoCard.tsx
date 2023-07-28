@@ -59,8 +59,12 @@ const RepoCard: React.FC<repoProps> = ({ repo }) => {
                         )}
                         <h3>{repoData.owner.login}</h3>
                         <div className={classes.actions}>
-                            <ImGithub />
-                            <FaReadme />
+                            <a href={repoData.html_url} target='_blank' rel='noreferer noopener'>
+                                <ImGithub />
+                            </a>
+                            <a href={`${repoData.html_url}/blob/main/README.md` } target='_blank' rel='noreferer noopener'>
+                                <FaReadme />
+                            </a>
                             {repoData.homepage ?
                                 <a href={repoData.homepage} target='_blank' rel='noreferer noopener'>
                                     <FaLink />
