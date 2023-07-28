@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserProps } from "../../types/user";
 import { MdLocationPin } from "react-icons/md";
-import { AiFillStar } from "react-icons/ai";
+import {  AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import classes from "./User.module.scss";
 import { FavoriteUserContext } from "../../context/FavoriteUserContext";
