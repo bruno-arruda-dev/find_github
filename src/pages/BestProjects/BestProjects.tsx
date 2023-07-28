@@ -49,6 +49,10 @@ const BestProjects: React.FC = () => {
     checkFavoriteRepo(repo);
   }
 
+  useEffect(() => {
+    // Observar quando o valor de "favorites" for alterado.
+  }, [favorites]);
+
   return (
     <div className={classes.project}>
       <h2>{bestProjects.length} projetos de {login}</h2>

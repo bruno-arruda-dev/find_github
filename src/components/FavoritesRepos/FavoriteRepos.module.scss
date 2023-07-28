@@ -1,0 +1,18 @@
+@import '../styles/global.scss';
+
+@import '../styles/global.scss';
+
+.favoriteRepos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: $bg-secnd-color;
+    border-radius: $main-radius;
+    width: 400px;
+    padding: 10px 5px;
+
+    h4 {
+        margin: 1rem 0;
+    }
+}

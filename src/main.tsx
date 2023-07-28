@@ -8,12 +8,12 @@ import { FavoriteRepoProvider } from './context/FavoriteRepoContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <FavoriteUserProvider>
-      <FavoriteRepoProvider>
-        <Router>
+    <Router>
+      <FavoriteUserProvider>
+        <FavoriteRepoProvider>
           <App />
-        </Router>
-      </FavoriteRepoProvider>
-    </FavoriteUserProvider>
+        </FavoriteRepoProvider>
+      </FavoriteUserProvider>
+    </Router>
   </React.StrictMode>,
 )

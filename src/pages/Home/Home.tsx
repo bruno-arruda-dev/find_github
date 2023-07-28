@@ -6,6 +6,7 @@ import User from '../../components/User/User';
 import Error from '../../components/Error/Error';
 import Loader from '../../components/Loader/Loader';
 import FavoriteUsers from '../../components/FavoritesUsers/FavoriteUsers';
+import FavoriteRepos from '../../components/FavoritesRepos/FavoriteRepos';
 
 const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -50,6 +51,7 @@ const Home = () => {
       {user && <User {...user} />}
       {error && <Error />}
       <FavoriteUsers loadUser={loadUser} />
+      <FavoriteRepos />
     </div>
   );
 }

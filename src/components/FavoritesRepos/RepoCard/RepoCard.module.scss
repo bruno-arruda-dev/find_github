@@ -1,0 +1,82 @@
+@import '../../styles/global.scss';
+
+.repoCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $main-radius;
+    font-size: 0.8rem;
+    background-color: $icon-main-color;
+    padding: 5px;
+    margin-bottom: 5px;
+    height: fit-content;
+
+    .repoContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .description {
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 3px;
+        transition: all .1s ease-in-out;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 0.6rem;
+    }
+
+    .actions {
+        width: 80%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .disableLink {
+            fill: rgba(255, 255, 255, 0.164);
+            pointer-events: none;
+        }
+
+        .star {
+            fill:yellow;
+
+                &:hover {
+                    animation: spin .5s ease-in-out;
+                }
+        }
+    }
+
+    &:hover {
+        .description {
+            height: fit-content;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
