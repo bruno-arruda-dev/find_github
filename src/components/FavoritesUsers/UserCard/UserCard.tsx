@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classes from './UserCard.module.scss';
-import { SearchProps } from '../../../types/loadUser';
 
 interface UserData {
     login: string;

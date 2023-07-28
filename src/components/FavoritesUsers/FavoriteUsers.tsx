@@ -11,7 +11,7 @@ const FavoriteUsers = ({ loadUser }: SearchProps) => {
     <div className={classes.favoriteUsers}>
       <h4>Usuários Favoritos</h4>
       <div className={classes.usersContainer}>
-        {favoritesUsers.map((user, key) => (
+        {favoritesUsers.map((user) => (
           <UserCard loadUser={loadUser} user={user} />
         ))}
       </div>
