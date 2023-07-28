@@ -21,3 +21,9 @@
         gap: 5px; /* Espaçamento entre os componentes */
     }
 }
+
+@media (max-width: 420px) {
+    .favoriteUsers {
+        width: 99%;
+    }
+}

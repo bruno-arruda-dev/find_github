@@ -10,7 +10,7 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    min-width: 400px;
+    width: 400px;
 
     p {
         color: $txt-secnd-color;
@@ -18,16 +18,27 @@
     }
 
     .search_container {
+        width: 90%;
         display: flex;
-        gap: 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            width: 70%;
+            padding: 7px;
+        }
 
         button {
             background-color: $icon-main-color;
             cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
         }
 
-        input, button {
-            padding: .6rem;
+        input,
+        button {
             border-radius: $main-radius;
             border: none;
             color: $icon-main-color;
@@ -37,7 +48,19 @@
             }
         }
     }
+
 }
 
+@media (max-width: 420px) {
+    .search {
+        width: 99%;
 
+        .search_container {
+            width: 100%;
 
+            input {
+                width: 90%;
+            }
+        }
+    }
+}

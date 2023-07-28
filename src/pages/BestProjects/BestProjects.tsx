@@ -74,12 +74,12 @@ const BestProjects: React.FC = () => {
               {<FaReadme />}
             </a>
             {project.homepage ?
-                                <a href={project.homepage} target='_blank' rel='noreferer noopener'>
-                                    <FaLink />
-                                </a>
-                                :
-                                <FaLink className={classes.disableLink} />
-                            }
+              <a href={project.homepage} target='_blank' rel='noreferer noopener'>
+                <FaLink />
+              </a>
+              :
+              <FaLink className={classes.disableLink} />
+            }
           </div>
         </div>
       ))}
