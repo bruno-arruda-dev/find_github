@@ -1,6 +1,10 @@
 @import '../../components/styles/global.scss';
 
 .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     h2 {
         text-align: center;
         margin: 1.5rem;
@@ -17,6 +21,11 @@
         gap: 1rem;
         margin-bottom: 1.5rem;
         position: relative;
+        width: 500px;
+
+        @media (max-width: 500px) {
+            width: 98%;
+        }
 
         .star {
             position: absolute;
