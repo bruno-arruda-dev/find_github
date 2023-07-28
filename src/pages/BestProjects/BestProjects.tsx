@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from './BestProjects.module.scss';
 import { ImGithub } from 'react-icons/im';
-import { FaReadme } from 'react-icons/fa';
+import { FaLink, FaReadme } from 'react-icons/fa';
 import { AiFillStar } from 'react-icons/ai';
 import Loader from '../../components/Loader/Loader';
 import { FavoriteRepoContext } from '../../context/FavoriteRepoContext';
@@ -13,6 +13,7 @@ type Project = {
   description: string;
   html_url: string;
   created_at: string;
+  homepage: string;
   owner: {
     login: string;
   };
@@ -72,6 +73,13 @@ const BestProjects: React.FC = () => {
             <a href={`${project.html_url}/blob/main/README.md`} target='_blank' rel='noopener noreferrer'>
               {<FaReadme />}
             </a>
+            {project.homepage ?
+                                <a href={project.homepage} target='_blank' rel='noreferer noopener'>
+                                    <FaLink />
+                                </a>
+                                :
+                                <FaLink className={classes.disableLink} />
+                            }
           </div>
         </div>
       ))}
